@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
             Loved by Creators
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            See what people are saying about webformify
+            See what people are saying about WebFormSimplified
           </p>
         </motion.div>
 

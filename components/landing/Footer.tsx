@@ -6,10 +6,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
           <h3 className="text-xl font-bold text-black dark:text-white">
-            webformify
+            WebFormSimplified
           </h3>
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            © 2026 webformify. All rights reserved.
+            © 2026 WebFormSimplified. All rights reserved.
           </p>
         </div>
       </div>

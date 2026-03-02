@@ -17,7 +17,7 @@ export default function AboutFounderSection() {
             Built by Creators
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Meet the founder behind webformify
+            Meet the founder behind WebFormSimplified
           </p>
         </motion.div>
 
@@ -67,8 +67,9 @@ export default function AboutFounderSection() {
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
               With over 5 years of experience in product design and development,
-              I created webformify to solve a problem I faced countless times:
-              building beautiful, functional forms shouldn't be complicated.
+              I created WebFormSimplified to solve a problem I faced countless
+              times: building beautiful, functional forms shouldn't be
+              complicated.
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
@@ -110,7 +111,7 @@ export default function AboutFounderSection() {
                 <Github size={20} />
               </motion.a>
               <motion.a
-                href="mailto:hello@webformify.com"
+                href="mailto:hello@webformsimplified.com"
                 whileHover={{ y: -4 }}
                 whileTap={{ scale: 0.95 }}
                 className="p-4 bg-black dark:bg-white text-white dark:text-black hover:opacity-80 transition-opacity"

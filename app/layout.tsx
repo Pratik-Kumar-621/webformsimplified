@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "webformify - Create Forms Your Way",
+  title: "WebFormSimplified - Create Forms Your Way",
   description:
     "Build stunning, multi-step forms with our drag-and-drop playground. Design once, export anywhere.",
 };
