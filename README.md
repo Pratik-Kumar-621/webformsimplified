@@ -1,80 +1,54 @@
 # WebFormSimplified
 
-WebFormSimplified is a modern, minimal builder for creating customizable forms using a drag‑and‑drop playground. It ships with a full set of form components (input, select, radio, checkbox, etc.), multi‑step support, and a code export feature so you can integrate forms seamlessly into any project.
+### A Form UI Toolkit & Playground
 
-The repository demonstrates a Next.js 16 application with built‑in Firebase authentication (email/password + Google provider), a polished light/dark theme, and a custom landing page that showcases all features and UI components.
+WebFormSimplified is a component-driven interface designed specifically for building forms. Not only do you get every input element, select menu, radio group, checkbox, and more — you also get a live drag‑and‑drop playground where you can arrange, customize, and preview forms before exporting clean, production-ready code.
 
----
+Key aspects of the product:
 
-## Features
+- 🧩 **Component Library** – All essential form controls (single‑line, multi‑line, selects, radios, checkboxes, switches, date pickers, file inputs, etc.) designed with a modern, sharp aesthetic.
+- 🔧 **Drag‑and‑Drop Builder** – Visually assemble forms by dragging components into place, rearranging them, and configuring properties on the fly.
+- 🏹 **Multi‑Step Support** – Create wizard‑style flows with progress indicators and conditional navigation between steps.
+- 📄 **Code Export** – Once your form is ready, export the JSX/HTML and accompanying styles to drop directly into your project.
+- 🎨 **Themeable UI** – Built‑in light/dark mode with system detection, and simple theming for colors and typography.
+- 📦 **Standalone** – Can be integrated into any front‑end stack; the playground itself is framework‑agnostic once exported.
 
-- **Custom Landing Page** with:
-  - Hero, features, testimonials, founder bio, CTA, and footer sections
-  - Animated shader background and responsive design
-  - Bento grid, draggable testimonial cards, and microinteractions
-  - Light/dark mode switch with system preference detection
-- **Firebase Authentication** (email/password, Google, password reset)
-- **Protected Routes** (signup, signin, dashboard with redirects)
-- **Context API** for auth state and custom hooks
-- **Tailwind CSS** with dark mode and utility-first styling
-- **Next Themes** for theme management
-- **Framer Motion** for animations and draggable elements
-- **TypeScript** throughout for type safety
+This repository hosts a demo application showcasing the product’s capabilities (including a landing page, authentication, and dashboard). You can use it as a starting point or tailor the playground UI to your own requirements.
 
 ---
 
-## Getting Started
+## Quick Start (Demo)
 
-1. **Install dependencies**
+This section only applies if you want to run the demo environment that ships with the component playground:
 
+1. Install dependencies:
    ```bash
    npm install
-   # or yarn install
-   # or pnpm install
    ```
-
-2. **Environment variables**
-
-   Copy `.env.example` to `.env` and provide your Firebase configuration values (shown in the repo). Variables should use `NEXT_PUBLIC_FIREBASE_*` prefix.
-
-3. **Run development server**
-
+2. Provide a `.env` file with your Firebase credentials if you wish to test authentication. Only the playground UI itself does not require any backend.
+3. Launch:
    ```bash
    npm run dev
-   # or yarn dev
    ```
+4. Visit http://localhost:3000 to explore the landing page, sign up/in flows, and the playground interface.
 
-   Open [http://localhost:3000](http://localhost:3000) to view the app.
-
-4. **Build for production**
-
-   ```bash
-   npm run build
-   ```
+For product usage, you can ignore all the demo-specific pages and focus on the `components/` folder containing the UI toolkit.
 
 ---
 
-## Project Structure
+## Product Focus
+
+If you’re evaluating WebFormSimplified as a UI kit for your own application, the core area of interest is:
 
 ```
-app/                 # Next.js app directory (routing + pages)
-components/          # Reusable React components (landing, auth, etc.)
-context/             # React context providers (AuthContext)
-hooks/               # Custom hooks
-lib/                 # Utility modules (firebase, auth, theme)
-public/              # Static assets
-.env                 # Environment variables (not checked in)
-next.config.ts       # Next.js configuration
-tailwind.config.ts   # Tailwind CSS configuration
-package.json         # Dependencies & scripts
-README.md            # This file
+components/form/         # form field components and layouts
+components/dragdrop/     # playground drag-and-drop helpers
+components/theme/        # theme utilities (light/dark)
+hooks/usePlayground.ts   # playground state management
+lib/exportCode.ts        # logic to generate exportable markup
 ```
 
----
-
-## Acknowledgements
-
-This project was built as a demonstration of a customizable form builder platform with strong UI/UX and theme support. It uses popular libraries like Next.js, Tailwind CSS, Firebase, and Framer Motion.
+All other directories (auth, landing, dashboard) are simply part of the demo shell and can be removed when using the toolkit alone.
 
 ---
 
