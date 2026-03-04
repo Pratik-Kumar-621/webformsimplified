@@ -1,58 +1,112 @@
 # WebFormSimplified
 
-### A Form UI Toolkit & Playground
+> Forms. Simplified. Built on shadcn.
 
-WebFormSimplified is a component-driven interface designed specifically for building forms. Not only do you get every input element, select menu, radio group, checkbox, and more — you also get a live drag‑and‑drop playground where you can arrange, customize, and preview forms before exporting clean, production-ready code.
+WebFormSimplified is a form-focused extension layer built on top of **shadcn/ui**.
 
-Key aspects of the product:
+It provides structured form components, editable templates, and a visual playground — while keeping everything copy-paste friendly and fully customizable.
 
-- 🧩 **Component Library** – All essential form controls (single‑line, multi‑line, selects, radios, checkboxes, switches, date pickers, file inputs, etc.) designed with a modern, sharp aesthetic.
-- 🔧 **Drag‑and‑Drop Builder** – Visually assemble forms by dragging components into place, rearranging them, and configuring properties on the fly.
-- 🏹 **Multi‑Step Support** – Create wizard‑style flows with progress indicators and conditional navigation between steps.
-- 📄 **Code Export** – Once your form is ready, export the JSX/HTML and accompanying styles to drop directly into your project.
-- 🎨 **Themeable UI** – Built‑in light/dark mode with system detection, and simple theming for colors and typography.
-- 📦 **Standalone** – Can be integrated into any front‑end stack; the playground itself is framework‑agnostic once exported.
+Not a replacement for shadcn.  
+An enhancement for serious form workflows.
 
-This repository hosts a demo application showcasing the product’s capabilities (including a landing page, authentication, and dashboard). You can use it as a starting point or tailor the playground UI to your own requirements.
+## Why
+
+### In current solutions
+- Forms are repetitive.  
+- Validation is inconsistent.  
+- Multi-step flows are messy.  
+- Builders generate unusable code.
+
+WebFormSimplified fixes that.
+
+
+## Features
+
+### Form Components
+
+- Input
+- Select
+- Radio / Radio Group
+- Checkbox / Checkbox List
+- Date Picker
+- Slider
+- Autocomplete
+- Toggle / Switch
+- Textarea
+- File Upload
+- Multi Select
+- Phone Input
+- OTP Input
+- FormField
+- FormLabel
+- FormDescription
+- FormError
+- FormSection
+- Multi-Step Form
+
+All components are:
+
+- Built on shadcn primitives
+- Fully typed (TypeScript)
+- React Hook Form ready
+- Zod compatible
+- Accessible
+- Variant friendly
+- Copy-paste safe
 
 ---
 
-## Quick Start (Demo)
+### Prebuilt Templates
 
-This section only applies if you want to run the demo environment that ships with the component playground:
+Production-ready forms:
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Provide a `.env` file with your Firebase credentials if you wish to test authentication. Only the playground UI itself does not require any backend.
-3. Launch:
-   ```bash
-   npm run dev
-   ```
-4. Visit http://localhost:3000 to explore the landing page, sign up/in flows, and the playground interface.
+- Login
+- Register
+- Contact
+- Checkout
+- Survey
+- Settings
+- Multi-step Wizard
 
-For product usage, you can ignore all the demo-specific pages and focus on the `components/` folder containing the UI toolkit.
+Clean code. No hidden abstraction.
 
 ---
 
-## Product Focus
+### Drag & Drop Playground
 
-If you’re evaluating WebFormSimplified as a UI kit for your own application, the core area of interest is:
+Visual form builder with:
 
-```
-components/form/         # form field components and layouts
-components/dragdrop/     # playground drag-and-drop helpers
-components/theme/        # theme utilities (light/dark)
-hooks/usePlayground.ts   # playground state management
-lib/exportCode.ts        # logic to generate exportable markup
-```
+- Drag & drop fields
+- Field configuration panel
+- Validation rules
+- Layout controls
+- Multi-step support
+- Light / Dark toggle
+- Theme customization
+- Clean React + TypeScript export
 
-All other directories (auth, landing, dashboard) are simply part of the demo shell and can be removed when using the toolkit alone.
+Built around:
+
+- Component registry
+- JSON schema representation
+- Dynamic renderer
+- Code generation engine
+
+## Competitive Landscape
+
+| Feature                                     | Exists Today?  |
+| ------------------------------------------- | -------------- |
+| Drag & drop form builder                    | ✔️ Yes          |
+| Exportable React code                       | ✔️ Yes          |
+| Based on shadcn UI                          | ✔️ Partially    |
+| Prebuilt editable form templates            | ❌ Rare         |
+| Live theme color customization              | ❌ Mostly no    |
+| Multi-step form support in builder          | ❌ Very limited |
+| Tight React Hook Form + Zod output          | Some           |
+| Playground panel with config controls       | ✔️ Partial      |
+| Developer-friendly export (clean, editable) | ✔️ Some         |
+
+WebFormSimplified combines all of this into one cohesive.
 
 ---
-
-## License
-
-MIT © Your Name
 
