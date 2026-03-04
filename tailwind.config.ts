@@ -7,7 +7,15 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)"],
+      },
+      // colors: {
+      //   primary: "rgb(var(--primary) / <alpha-value>)",
+      //   background: "rgb(var(--background) / <alpha-value>)",
+      // },
+    },
   },
   plugins: [],
 };
