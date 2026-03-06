@@ -35,10 +35,10 @@ export default function AuthForm({
 
   return (
     <div className="w-full max-w-md">
-      <h2 className="text-3xl font-bold mb-6 text-gray-800">{title}</h2>
+      <h2 className="mb-6 text-3xl font-bold text-gray-800">{title}</h2>
 
       {error && (
-        <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+        <div className="mb-4 rounded border border-red-400 bg-red-100 p-3 text-red-700">
           {error}
         </div>
       )}
@@ -48,7 +48,7 @@ export default function AuthForm({
           <div>
             <label
               htmlFor="displayName"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="mb-1 block text-sm font-medium text-gray-700"
             >
               Full Name
             </label>
@@ -57,7 +57,7 @@ export default function AuthForm({
               type="text"
               value={displayName}
               onChange={(e) => setDisplayName(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               placeholder="John Doe"
             />
           </div>
@@ -66,7 +66,7 @@ export default function AuthForm({
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="mb-1 block text-sm font-medium text-gray-700"
           >
             Email
           </label>
@@ -76,7 +76,7 @@ export default function AuthForm({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             placeholder="you@example.com"
           />
         </div>
@@ -84,7 +84,7 @@ export default function AuthForm({
         <div>
           <label
             htmlFor="password"
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="mb-1 block text-sm font-medium text-gray-700"
           >
             Password
           </label>
@@ -94,7 +94,7 @@ export default function AuthForm({
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             placeholder="••••••••"
           />
         </div>
@@ -102,7 +102,7 @@ export default function AuthForm({
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-bold py-2 px-4 rounded-lg transition duration-200"
+          className="w-full rounded-lg bg-blue-600 px-4 py-2 font-bold text-white transition duration-200 hover:bg-blue-700 disabled:bg-gray-400"
         >
           {isLoading ? "Loading..." : buttonText}
         </button>
