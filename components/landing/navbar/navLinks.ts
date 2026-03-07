@@ -6,14 +6,14 @@ interface NavItemType {
 
 export const navItems: NavItemType[] = [
   {
+    name: "Features",
+    to: "#features",
+  },
+  {
     name: "Components",
     to: "/components",
   },
 
-  {
-    name: "Features",
-    to: "#features",
-  },
   {
     name: "Themes",
     to: "/themes",
@@ -21,10 +21,6 @@ export const navItems: NavItemType[] = [
   {
     name: "Playground",
     to: "/playground",
-  },
-  {
-    name: "Pricing",
-    to: "/pricing",
   },
 ];
 export const navActionItems: NavItemType[] = [

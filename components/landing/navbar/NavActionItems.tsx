@@ -37,7 +37,7 @@ const NavActionItems = () => {
                     disabled={isLoggingOut}
                     variant="ghost"
                     color="error"
-                    className="h-8 cursor-pointer rounded-[7px] px-3 text-[14px] font-bold text-red-600 shadow-none transition-all duration-300 ease-in-out outline-none hover:bg-red-100"
+                    className="h-8 cursor-pointer rounded-md px-3 text-[14px] font-bold text-red-600 shadow-none transition-all duration-300 ease-in-out outline-none hover:bg-red-100"
                   >
                     <LogOut /> {isLoggingOut ? "Logging out..." : "Logout"}
                   </Button>
@@ -45,7 +45,7 @@ const NavActionItems = () => {
                   <Link key={item.name} href={item.to}>
                     <Button
                       variant="default"
-                      className={`${item.name === "Get Started" ? "bg-(--button) hover:bg-(--button-hover)" : "bg-(--foreground) hover:bg-slate-700 dark:text-(--background) dark:hover:bg-slate-200"} h-9 cursor-pointer rounded-[10px] px-5 text-[14px] font-bold text-white transition-all duration-300 ease-in-out`}
+                      className={`${item.name === "Get Started" ? "bg-(--button) hover:bg-(--button-hover)" : "bg-(--foreground) hover:bg-slate-700 dark:text-(--background) dark:hover:bg-slate-200"} h-9 cursor-pointer rounded-md px-5 text-[14px] font-bold text-white transition-all duration-300 ease-in-out`}
                     >
                       {item.name}
                     </Button>
