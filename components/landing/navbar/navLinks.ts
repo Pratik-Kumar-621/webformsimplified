@@ -25,13 +25,13 @@ export const navItems: NavItemType[] = [
 ];
 export const navActionItems: NavItemType[] = [
   {
-    name: "Get Started",
-    to: "/signup",
+    name: "Sign In",
+    to: "/signin",
     user: false,
   },
   {
-    name: "Sign In",
-    to: "/signin",
+    name: "Sign Up",
+    to: "/signup",
     user: false,
   },
   {

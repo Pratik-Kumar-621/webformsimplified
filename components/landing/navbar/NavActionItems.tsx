@@ -7,6 +7,7 @@ import { useAuth } from "@/context/AuthContext";
 import { LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { logout } from "@/lib/auth";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const NavActionItems = () => {
   const { user, loading } = useAuth();
@@ -24,7 +25,11 @@ const NavActionItems = () => {
   return (
     <div className="relative flex items-center gap-3">
       {loading ? (
-        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-blue-600"></div>
+        <>
+          {[...Array(2)].map((_, id: number) => (
+            <Skeleton key={id} className="h-8 w-21" />
+          ))}
+        </>
       ) : (
         <>
           {navActionItems
@@ -33,6 +38,7 @@ const NavActionItems = () => {
               <>
                 {item.name === "Logout" ? (
                   <Button
+                    key={item.name}
                     onClick={handleLogout}
                     disabled={isLoggingOut}
                     variant="ghost"
@@ -45,7 +51,7 @@ const NavActionItems = () => {
                   <Link key={item.name} href={item.to}>
                     <Button
                       variant="default"
-                      className={`${item.name === "Get Started" ? "bg-(--button) hover:bg-(--button-hover)" : "bg-(--foreground) hover:bg-slate-700 dark:text-(--background) dark:hover:bg-slate-200"} h-9 cursor-pointer rounded-md px-5 text-[14px] font-bold text-white transition-all duration-300 ease-in-out`}
+                      className={`${item.name === "Sign Up" ? "bg-(--button) hover:bg-(--button-hover)" : "bg-(--foreground) hover:bg-slate-700 dark:text-(--background) dark:hover:bg-slate-200"} h-9 w-21 cursor-pointer rounded-md px-5 text-[14px] font-bold text-white transition-all duration-300 ease-in-out`}
                     >
                       {item.name}
                     </Button>

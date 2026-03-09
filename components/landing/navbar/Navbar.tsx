@@ -16,6 +16,7 @@ import Link from "next/link";
 import NavActionItems from "./NavActionItems";
 import NavLinkItems from "./NavLinkItems";
 import { navItems } from "./navLinks";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function LandingPage() {
   const { theme, setTheme } = useTheme();
@@ -70,7 +71,7 @@ export default function LandingPage() {
         {/* Desktop navigation (lg and up) */}
         <div className="hidden items-center gap-5 lg:flex">
           <NavLinkItems />
-          {mounted && (
+          {mounted ? (
             <Button
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -82,6 +83,8 @@ export default function LandingPage() {
                 <Moon className="h-5 w-5" />
               )}
             </Button>
+          ) : (
+            <Skeleton className="h-9 w-9" />
           )}
           <NavActionItems />
         </div>
