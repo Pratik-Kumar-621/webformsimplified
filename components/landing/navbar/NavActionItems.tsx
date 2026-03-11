@@ -27,7 +27,7 @@ const NavActionItems = () => {
       {loading ? (
         <>
           {[...Array(2)].map((_, id: number) => (
-            <Skeleton key={id} className="h-8 w-21" />
+            <Skeleton key={id} className="h-8 w-24" />
           ))}
         </>
       ) : (
@@ -51,7 +51,7 @@ const NavActionItems = () => {
                   <Link key={item.name} href={item.to}>
                     <Button
                       variant="default"
-                      className={`${item.name === "Sign Up" ? "bg-(--button) hover:bg-(--button-hover)" : "bg-(--foreground) hover:bg-slate-700 dark:text-(--background) dark:hover:bg-slate-200"} h-9 w-21 cursor-pointer rounded-md px-5 text-[14px] font-bold text-white transition-all duration-300 ease-in-out`}
+                      className={`${item.name === "Sign Up" ? "bg-(--button) hover:bg-(--button-hover)" : "bg-(--foreground) hover:bg-slate-700 dark:text-(--background) dark:hover:bg-slate-200"} h-9 w-24 cursor-pointer rounded-md px-5 text-[14px] font-bold text-white transition-all duration-300 ease-in-out`}
                     >
                       {item.name}
                     </Button>

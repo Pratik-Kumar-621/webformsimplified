@@ -45,6 +45,9 @@ export default function LandingPage() {
             ? "bg-background/70 dark:bg-background/60 rounded-2xl border border-(--muted-foreground) backdrop-blur-xl"
             : "bg-background/0"
         }`}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.25, duration: 0.35, ease: "easeOut" }}
       >
         {/* Logo */}
         <Link
