@@ -17,9 +17,11 @@ import NavActionItems from "./NavActionItems";
 import NavLinkItems from "./NavLinkItems";
 import { navItems } from "./navLinks";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useRouter } from "next/navigation";
 
 export default function LandingPage() {
   const { theme, setTheme } = useTheme();
+  const navigate = useRouter();
   const [mounted, setMounted] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,6 +37,20 @@ export default function LandingPage() {
     const timeout = setTimeout(() => setMounted(true), 0);
     return () => clearTimeout(timeout);
   }, []);
+
+  const handleClick = (to: string) => {
+    const offset = 80;
+
+    if (to.startsWith("#")) {
+      const element = document.querySelector(to);
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    } else {
+      navigate.push("/");
+    }
+  };
 
   return (
     <>
@@ -61,17 +77,22 @@ export default function LandingPage() {
             alt="Logo"
             className="rounded"
           />
-          <div className="text-xl font-bold lg:hidden">WebformSimplified</div>
-          {!isScrolled ? (
-            <div className="hidden text-xl font-bold lg:block">
+          <div className="flex flex-col">
+            <div
+              className={`text-xl font-bold transition-all duration-300 ease-in-out ${isScrolled ? "h-0 w-0 scale-0" : "scale-100"}`}
+            >
               WebformSimplified
             </div>
-          ) : (
-            <div className="hidden text-xl font-bold lg:block">WFS</div>
-          )}
+
+            <div
+              className={`text-xl font-bold transition-all duration-300 ease-in-out ${!isScrolled ? "h-0 w-0 scale-0" : "scale-100"}`}
+            >
+              WFS
+            </div>
+          </div>
         </Link>
 
-        {/* Desktop navigation (lg and up) */}
+        {/* Desktop View */}
         <div className="hidden items-center gap-5 lg:flex">
           <NavLinkItems />
           {mounted ? (
@@ -92,7 +113,7 @@ export default function LandingPage() {
           <NavActionItems />
         </div>
 
-        {/* Mobile: theme + hamburger. Tablet: theme + NavActionItems + hamburger */}
+        {/* Hamburger with theme toggle */}
         <div className="flex items-center gap-2 lg:hidden">
           {mounted && (
             <Button
@@ -126,7 +147,7 @@ export default function LandingPage() {
         </div>
       </motion.nav>
 
-      {/* Mobile menu overlay: backdrop + fixed panel */}
+      {/* Mobile View */}
       {isMenuOpen && (
         <>
           <button
@@ -143,14 +164,16 @@ export default function LandingPage() {
           >
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (
-                <Link
+                <div
                   key={item.to}
-                  href={item.to}
                   className="block rounded-md px-3 py-2 text-sm font-medium text-(--foreground) hover:bg-slate-100 dark:hover:bg-slate-800"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    handleClick(item.to);
+                  }}
                 >
                   {item.name}
-                </Link>
+                </div>
               ))}
             </div>
             {/* NavActionItems only on mobile; tablet has them in navbar */}

@@ -20,7 +20,7 @@ const HeroSection = () => {
 
   const images =
     resolvedTheme === "dark"
-      ? ["/assets/playground-dark.png", "/assets/themes-dark.png"]
+      ? ["/assets/playground-dark.png", "/assets/theme-dark.png"]
       : ["/assets/playground-light.png", "/assets/theme-light.png"];
   return (
     <section className="relative z-10 grid min-h-[calc(100vh-150px)] w-full grid-cols-1 overflow-hidden bg-(--background) md:grid-cols-5">

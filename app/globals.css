@@ -11,6 +11,8 @@
   --background: #ffffff;
   --foreground: #0a0a0a;
   --muted-foreground: #737373;
+  --box-background: #f5f7f8;
+  --content-border: #e2e8f0;
   --dotted-bg: #c8c8c8;
   --spacing: 0.25rem;
   --button: #3c83f6;
@@ -23,6 +25,8 @@
   --primary: #e5e5e5;
   --background: #0a0a0a;
   --dotted-bg: #2c2c2c;
+  --content-border: #1e293b;
+  --box-background: #141a23;
   --foreground: #fafafa;
   --muted-foreground: #a1a1a1;
 }

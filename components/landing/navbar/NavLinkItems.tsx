@@ -1,18 +1,34 @@
 "use client";
 
 import { navItems } from "./navLinks";
-import Link from "next/link";
 import { motion } from "motion/react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const NavLinkItems = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const router = useRouter();
+  const handleClick = (to: string) => {
+    const offset = 80;
+
+    if (to.startsWith("#")) {
+      const element = document.querySelector(to);
+
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    } else {
+      router.push(to);
+    }
+  };
 
   return (
     <motion.div layout className="flex items-center">
       {navItems.map((item) => (
-        <Link
-          href="/"
+        <div
+          onClick={() => handleClick(item.to)}
           key={item.to}
           onMouseEnter={() => setHoveredItem(item.to)}
           onMouseLeave={() => setHoveredItem(null)}
@@ -29,7 +45,7 @@ const NavLinkItems = () => {
             />
           )}
           <span className="relative z-10">{item.name}</span>
-        </Link>
+        </div>
       ))}
     </motion.div>
   );
