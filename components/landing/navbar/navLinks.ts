@@ -10,6 +10,10 @@ export const navItems: NavItemType[] = [
     to: "#features",
   },
   {
+    name: "Docs",
+    to: "/docs",
+  },
+  {
     name: "Components",
     to: "/components",
   },
