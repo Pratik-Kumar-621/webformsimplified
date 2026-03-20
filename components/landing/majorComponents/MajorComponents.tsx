@@ -1,12 +1,12 @@
-import SectionHead from "@/components/SectionHead";
 import { componentsData } from "./componentsData";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import SectionHead from "@/components/SectionHead";
 
 const MajorComponents = () => {
   return (
-    <div className="relative z-30 bg-[#F5F7F8] px-8 py-6 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] md:px-16 md:py-8 lg:px-24 lg:py-10 dark:bg-[#020617] dark:shadow-[-10px_-10px_30px_4px_rgba(255,255,255,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
+    <div className="relative z-30 bg-[#F5F7F8] px-8 py-6 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),10px_10px_30px_4px_rgba(45,78,255,0.15)] md:px-16 md:py-8 lg:px-24 lg:py-10 dark:bg-[#020617] dark:shadow-[-10px_-10px_30px_4px_rgba(255,255,255,0.1),10px_10px_30px_4px_rgba(45,78,255,0.15)]">
       <SectionHead
         title="Explore Production-Ready Components"
         description="Every component is meticulously crafted for the best developer and user experience, so you can focus on building amazing forms without worrying about the details."
