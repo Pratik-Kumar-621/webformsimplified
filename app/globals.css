@@ -13,22 +13,30 @@
   --muted-foreground: #737373;
   --box-background: #f5f7f8;
   --content-border: #e2e8f0;
+  --light-bg: #f1f5f9;
   --dotted-bg: #c8c8c8;
   --spacing: 0.25rem;
   --button: #3c83f6;
   --button-hover: #005cf1;
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
+  --section-shadow:
+    -10px -10px 30px 4px rgba(0, 0, 0, 0.1),
+    10px 10px 30px 4px rgba(45, 78, 255, 0.15);
 }
 
 .dark {
   --primary: #e5e5e5;
   --background: #0a0a0a;
   --dotted-bg: #2c2c2c;
+  --light-bg: #1e293b;
   --content-border: #1e293b;
   --box-background: #141a23;
   --foreground: #fafafa;
   --muted-foreground: #a1a1a1;
+  --section-shadow:
+    -10px -10px 30px 4px rgba(255, 255, 255, 0.1),
+    10px 10px 30px 4px rgba(45, 78, 255, 0.15);
 }
 @layer base {
   body {
