@@ -25,12 +25,16 @@ export default function LandingPage() {
   const [mounted, setMounted] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolledUp, setIsScrolledUp] = useState(false);
   const { scrollY } = useScroll();
   const width = useTransform(scrollY, [0, 100], ["100%", "90%"]);
-  const y = useTransform(scrollY, [0, 100], [0, 12]);
+  const y = useTransform(scrollY, [0, 100], [0, 20]);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() || 0;
     setIsScrolled(latest > 10);
+    setIsScrolledUp(latest > previous && latest > 360);
+    console.log("isScrolledUp", isScrolledUp);
   });
 
   useEffect(() => {
@@ -60,9 +64,9 @@ export default function LandingPage() {
           isScrolled
             ? "bg-background/70 dark:bg-background/60 rounded-2xl border border-(--muted-foreground) backdrop-blur-xl"
             : "bg-background/0"
-        }`}
+        } ${isScrolledUp && "pointer-events-none"} `}
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opacity: !isScrolledUp ? 1 : 0, y: 0 }}
         transition={{ delay: 0.25, duration: 0.35, ease: "easeOut" }}
       >
         {/* Logo */}
