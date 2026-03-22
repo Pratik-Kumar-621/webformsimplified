@@ -1,16 +1,36 @@
 import SectionHead from "@/components/SectionHead";
 import { uspData } from "./uspData";
-import { Check } from "lucide-react";
+import { useRef } from "react";
+import { useInView, motion } from "motion/react";
 
 const Usp = () => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, {
+    margin: "-30px",
+  });
   return (
     <div className="relative z-30 flex flex-col items-start bg-[#F5F7F8] px-8 py-6 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),10px_10px_30px_4px_rgba(45,78,255,0.15)] sm:items-center md:px-16 md:py-8 lg:px-24 lg:py-10 dark:bg-[#020617] dark:shadow-[-10px_-10px_30px_4px_rgba(255,255,255,0.1),10px_10px_30px_4px_rgba(45,78,255,0.15)]">
       <SectionHead
         title="Why WebFormSimplified stands out"
         description="A quick look at the features and capabilities of WebFormSimplified."
       />
-      <div className="w-full max-w-4xl overflow-hidden rounded-lg border-(--muted-foreground) shadow-md dark:shadow-gray-500/50">
-        <table className="w-full text-left align-middle">
+      <motion.div
+        ref={ref}
+        className="w-full max-w-4xl overflow-hidden rounded-lg border-(--muted-foreground) shadow-md dark:shadow-gray-500/50"
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ delay: 0.1, duration: 0.55, ease: "linear" }}
+      >
+        <motion.table
+          initial={{ rotateY: 90, rotateX: 90, opacity: 0.3 }}
+          animate={
+            isInView
+              ? { rotateY: 0, rotateX: 0, opacity: 1 }
+              : { rotateY: 90, rotateX: 90, opacity: 0.3 }
+          }
+          transition={{ delay: 0.1, duration: 0.45, ease: "linear" }}
+          className="w-full text-left align-middle"
+        >
           <thead className="w-full border-b-0 bg-(--light-bg)">
             <tr className="h-12 w-full border-0">
               <th className="w-[40%] pl-8 text-left font-semibold">Feature</th>
@@ -40,8 +60,8 @@ const Usp = () => {
               </tr>
             ))}
           </tbody>
-        </table>
-      </div>
+        </motion.table>
+      </motion.div>
     </div>
   );
 };

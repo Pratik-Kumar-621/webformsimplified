@@ -9,7 +9,7 @@ const NavLinkItems = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const router = useRouter();
   const handleClick = (to: string) => {
-    const offset = 80;
+    const offset = 20;
 
     if (to.startsWith("#")) {
       const element = document.querySelector(to);
