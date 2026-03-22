@@ -1,15 +1,24 @@
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
 interface SectionHeadProps {
   title: string;
   description: string;
 }
 const SectionHead = ({ title, description }: SectionHeadProps) => {
+  const ref = useRef(null);
+  const inToView = useInView(ref, {
+    margin: "-30px",
+  });
   return (
     <motion.div
+      ref={ref}
       className="flex flex-col items-start gap-3 pb-6 md:pb-8 lg:items-center lg:pb-10"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.25, duration: 0.35, ease: "easeOut" }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inToView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{
+        duration: 0.35,
+        ease: "easeOut",
+      }}
     >
       <h3 className="text-left text-3xl font-medium text-(--foreground) lg:text-center">
         {title}

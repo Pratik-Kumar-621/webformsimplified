@@ -9,7 +9,7 @@ const NavLinkItems = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const router = useRouter();
   const handleClick = (to: string) => {
-    const offset = 80;
+    const offset = 20;
 
     if (to.startsWith("#")) {
       const element = document.querySelector(to);
@@ -36,7 +36,7 @@ const NavLinkItems = () => {
         >
           {hoveredItem === item.to && (
             <motion.div
-              layoutId="navbar-hover"
+              layoutId="navbar-item-hover"
               className="absolute inset-0 z-0 h-full w-full rounded-md bg-gray-300 dark:bg-gray-600"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
